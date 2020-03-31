@@ -10,7 +10,8 @@ namespace sgr
         private int _count;
         public int GetLatestCount()
         {
-            return _count++;
+            return _count++; 
+
         }
     }
 }
