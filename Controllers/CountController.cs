@@ -13,10 +13,18 @@ namespace sgr.Controllers
     public class CountController : Controller
     {
         private readonly IHubContext<CountHub> _countHub;
+        /// <summary>
+        /// 控制器的构造器，初始化一个countHub成员
+        /// </summary>
+        /// <param name="countHub"></param>
         public CountController(IHubContext<CountHub> countHub)
         {
             _countHub = countHub;
         }
+        /// <summary>
+        /// 一个post服务端方法，调用客户端someFunc方法
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Post()
         {

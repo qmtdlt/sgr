@@ -28,14 +28,14 @@ namespace sgr
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseStaticFiles();
+            app.UseStaticFiles();   //Ìí¼ÓÅäÖÃ
 
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
-                endpoints.MapHub<CountHub>("/counthub");
+                endpoints.MapControllers();     //ÐÞ¸Ä
+                endpoints.MapHub<CountHub>("/counthub");        //Ìí¼Ó
             });
         }
     }

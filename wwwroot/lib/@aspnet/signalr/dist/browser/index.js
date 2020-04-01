@@ -3,8 +3,10 @@ setupConnection = () => {
     connection = new signalR.HubConnectionBuilder()
         .withUrl("/counthub")
         .build();
+    //一个ReceiveUpdate监听方法，接受一个参数
     connection.on("ReceiveUpdate", (update) => {
         const resultDiv = document.getElementById("result");
+        //更新div内容
         resultDiv.innerHTML = update;
     });
     connection.on("someFunc", (obj) => {
@@ -20,6 +22,7 @@ setupConnection = () => {
 }
 setupConnection();
 
+//为提交按钮绑定click事件
 document.getElementById("submit").addEventListener("click", e => {
     e.preventDefault();
     fetch("/api/count",
